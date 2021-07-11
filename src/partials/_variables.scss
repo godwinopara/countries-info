@@ -1,0 +1,20 @@
+$dark-mode-text-color: hsl(0, 0%, 100%);
+$dark-mode-background-color: hsl(207, 26%, 17%);
+$dark-mode-content-color: hsl(209, 23%, 22%);
+$light-mode-background-color: hsl(0, 0%, 98%);
+$light-mode-input-background: hsl(0, 0%, 52%);
+$light-mode-text-color: hsl(200, 15%, 8%);
+
+/* TYPOGRAPHY */
+
+@mixin text-bold {
+	font-weight: 800;
+}
+
+@mixin semi-bold {
+	font-weight: 600;
+}
+
+@mixin normal {
+	font-weight: 300;
+}
