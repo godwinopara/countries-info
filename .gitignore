@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+.README.md
+.README.template.md
+.style-guide.md
 
 # testing
 /coverage
