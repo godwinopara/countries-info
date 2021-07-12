@@ -1,0 +1,70 @@
+@use "./variables";
+
+.country-details-container {
+	padding-top: 10rem;
+	height: 100%;
+
+	span {
+		display: inline-block;
+	}
+
+	span + span {
+		margin-left: 0.5rem;
+	}
+
+	li {
+		list-style: none;
+		line-height: 2;
+	}
+}
+.country-detail-img {
+	width: 10%;
+}
+.country-information {
+	width: 85%;
+	h2 {
+		margin: 1rem 0;
+		@include text-bold;
+	}
+	.right-side {
+		margin: 2rem 0;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.country-details-container {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+	}
+	.country-information-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.country-information {
+		margin-left: 2rem;
+	}
+
+	.country-information-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		h2 {
+			font-size: 1.7rem;
+		}
+
+		.right-side {
+			margin: 0;
+		}
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.country-information {
+		margin-left: 7rem;
+	}
+}

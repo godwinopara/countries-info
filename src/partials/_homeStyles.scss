@@ -6,6 +6,7 @@
 }
 .dark-mode {
 	background: $dark-mode-background-color;
+	color: $dark-mode-text-color;
 	.country-info-wrapper {
 		box-shadow: none;
 		background: $dark-mode-content-color;
