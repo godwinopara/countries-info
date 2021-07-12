@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
 import CountryDetails from "./pages/CountryDetails";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
+	const [backgroundState, setbackgroundState] = useState(false);
+
+	const handleClick = (params) => {
+		setbackgroundState(!backgroundState);
+	};
 	return (
 		<Router>
 			<div>
-				<h1>App</h1>
+				<NavBar dark={backgroundState} onClick={handleClick} />
 				<Switch>
 					<Route exact path="/">
-						<Home />
+						<Home darkMode={backgroundState} />
 					</Route>
-					<Route path="/:name">
+					<Route exact path="/:id">
 						<CountryDetails />
 					</Route>
 				</Switch>

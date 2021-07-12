@@ -1,0 +1,44 @@
+@use "./default";
+.nav-wrapper {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background: $dark-mode-text-color;
+	-webkit-box-shadow: -1px 2px 5px 0px rgba(191, 191, 191, 1);
+	-moz-box-shadow: -1px 2px 5px 0px rgba(191, 191, 191, 1);
+	box-shadow: -1px 2px 5px 0px rgba(191, 191, 191, 1);
+}
+.header-dark {
+	background: $dark-mode-content-color;
+	box-shadow: none;
+	color: $dark-mode-text-color;
+}
+.nav-elements {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	list-style: none;
+	padding: 1rem 0;
+
+	ul {
+		list-style: none;
+	}
+
+	.background-mode-icon {
+		@include centerFlex;
+		cursor: pointer;
+
+		li {
+			margin-left: 0.5rem;
+		}
+	}
+
+	.nav-heading {
+		font-size: 1.5rem;
+		@include text-bold;
+	}
+
+	li:nth-child(2) {
+		@include semi-bold;
+	}
+}
