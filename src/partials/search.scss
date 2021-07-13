@@ -1,0 +1,73 @@
+@use "./default";
+.search-wrapper {
+	margin-bottom: 3rem;
+}
+
+.filter-countries {
+	input {
+		padding: 1rem 0.5rem;
+		outline: none;
+		border: none;
+		width: 70%;
+	}
+}
+
+.search-by-region {
+	position: relative;
+	margin: 1rem 0;
+	z-index: 1;
+
+	ul,
+	li {
+		list-style: none;
+		padding: 0.5rem 0.8rem;
+	}
+
+	.icon {
+		position: absolute;
+		top: 13px;
+		right: 10px;
+	}
+}
+.selected {
+	list-style: none;
+	width: 200px;
+	position: relative;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.drop-down {
+	width: 200px;
+	position: absolute;
+	top: 45px;
+
+	li {
+		cursor: pointer;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.search-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.filter-countries {
+			width: 50%;
+		}
+
+		.search-by-region {
+			width: 40%;
+			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+
+			.search-icon {
+				right: 5px;
+				left: 0;
+			}
+		}
+	}
+}

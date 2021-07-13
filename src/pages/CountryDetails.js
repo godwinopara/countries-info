@@ -13,11 +13,11 @@ function CountryDetails({ dark }) {
 
 	return (
 		<div className={`country-details-container ${dark ? "dark-mode" : ""}`}>
-			<Link to="/">
-				<div className="back-home-btn container">
-					<div className="icon">
-						<IoMdArrowBack />
-					</div>
+			<div className="back-home-btn container">
+				<div className="icon">
+					<IoMdArrowBack />
+				</div>
+				<Link to="/">
 					<input
 						type="button"
 						value="Back"
@@ -34,8 +34,8 @@ function CountryDetails({ dark }) {
 								  }
 						}
 					/>
-				</div>
-			</Link>
+				</Link>
+			</div>
 			{!isPending && (
 				<SingleCountryInformation
 					country={singleCountryDetails}
