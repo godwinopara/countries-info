@@ -1,27 +1,55 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "../components/useFetch";
+import CountryBorders from "../components/CountryBorders";
+import { IoMdArrowBack } from "react-icons/io";
 
 function CountryDetails({ dark }) {
 	const { id } = useParams();
+
 	const { isPending, singleCountryDetails } = useFetch(
 		"https://restcountries.eu/rest/v2/alpha/" + id
 	);
 
-	if (!isPending) {
-		console.log(singleCountryDetails);
-	}
-
 	return (
 		<div className={`country-details-container ${dark ? "dark-mode" : ""}`}>
-			{!isPending && <SingleCountryInformation country={singleCountryDetails} />}
+			<Link to="/">
+				<div className="back-home-btn container">
+					<div className="icon">
+						<IoMdArrowBack />
+					</div>
+					<input
+						type="button"
+						value="Back"
+						style={
+							dark
+								? {
+										backgroundColor: "hsl(209, 23%, 22%)",
+										color: "hsl(0, 0%, 100%)",
+								  }
+								: {
+										backgroundColor: "hsl(0, 0%, 100%)",
+										color: "hsl(200, 15%, 8%)",
+										boxShadow: " -1px 2px 5px 0px rgba(191, 191, 191, 1)",
+								  }
+						}
+					/>
+				</div>
+			</Link>
+			{!isPending && (
+				<SingleCountryInformation
+					country={singleCountryDetails}
+					borders={singleCountryDetails.borders}
+					dark={dark}
+				/>
+			)}
 		</div>
 	);
 }
 
 export default CountryDetails;
 
-function SingleCountryInformation({ country }) {
+function SingleCountryInformation({ country, borders, dark }) {
 	return (
 		<div className="country-information-wrapper container">
 			<div className="country-details-image">
@@ -74,12 +102,7 @@ function SingleCountryInformation({ country }) {
 					</div>
 				</div>
 				<div className="borders">
-					<li>
-						<strong>Borders Countries: </strong>
-						{country.borders.map((border, index) => (
-							<span key={index}>{border}</span>
-						))}
-					</li>
+					<CountryBorders borders={borders} dark={dark} />
 				</div>
 			</div>
 		</div>

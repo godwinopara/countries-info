@@ -17,6 +17,10 @@ function useFetch(url) {
 				setisPending(false);
 			});
 		}
+
+		return () => {
+			setisPending(false);
+		};
 	}, [url, isPending]);
 
 	function countriesData() {
