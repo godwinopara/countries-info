@@ -21,7 +21,7 @@ Homepage Dark Background
 ![Homepage Dark Background](./design/desktop-design-home-dark.jpg)
 
 Details Page
-![Mobile Layout](./design/mobile-design-detail-light.jpg)
+![Mobile Layout](./design/desktop-design-detail-light.jpg)
 
 ### Links
 
