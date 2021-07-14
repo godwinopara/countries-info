@@ -17,17 +17,15 @@ Users should be able to:
 
 ### Screenshot
 
-### Homepage Dark Background
+Homepage Dark Background
+![Homepage Dark Background](./design/desktop-design-home-dark.jpg)
 
-    ![Homepage Dark Background](./design/desktop-design-home-dark.jpg)
-
-### Details Page
-
-    ![Country Details Page](./design/desktop-design-detail-light.jpg)
+Details Page
+![Mobile Layout](./design/mobile-design-detail-light.jpg)
 
 ### Links
 
--   Live Site URL: [Live Demo](https://countries-info-site.netlify.app/)
+-   Live Site URL: [countries-info-site](https://countries-info-site.netlify.app/)
 
 ### Built with
 
