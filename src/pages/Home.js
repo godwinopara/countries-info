@@ -11,18 +11,20 @@ function Home({ darkMode }) {
 	const [show, setshow] = useState(false);
 
 	useEffect(() => {
-		const filterCountries = async () => {
-			const data = await axios.get("https://restcountries.eu/rest/v2/all");
-			const countriesData = await data.data;
-			const filteredCountries = countriesData.filter((country) => {
-				return country.name.includes(
-					userInput.charAt(0).toUpperCase() + userInput.slice(1)
-				);
-			});
-			setcountries(filteredCountries);
-			setpending(false);
-		};
-		filterCountries();
+		setTimeout(() => {
+			const filterCountries = async () => {
+				const data = await axios.get("https://restcountries.eu/rest/v2/all");
+				const countriesData = await data.data;
+				const filteredCountries = countriesData.filter((country) => {
+					return country.name.includes(
+						userInput.charAt(0).toUpperCase() + userInput.slice(1)
+					);
+				});
+				setcountries(filteredCountries);
+				setpending(false);
+			};
+			filterCountries();
+		}, 1500);
 	}, [userInput]);
 
 	useEffect(() => {
@@ -68,6 +70,15 @@ function Home({ darkMode }) {
 				/>
 			</div>
 			<div className="countries-container container">
+				{pending && (
+					<div className="loader">
+						<div class={`lds-facebook ${darkMode ? "loader-dark-mode" : ""}`}>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				)}
 				{!pending &&
 					countries.map((country, index) => (
 						<DisplayCountry key={index} country={country} />

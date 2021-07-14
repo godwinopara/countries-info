@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MdExpandMore } from "react-icons/md";
 
 function Search({
@@ -11,32 +10,6 @@ function Search({
 	show,
 	handleSelect,
 }) {
-	// const [selected, setselected] = useState("Filter by Region..");
-	// const [show, setShow] = useState(false);
-	// const handleSelect = () => {
-	// 	setShow(!show);
-	// };
-	// const handleClick = () => {
-	// 	setselected("Africa");
-	// 	setShow(!show);
-	// };
-	// const handleClickAmerica = () => {
-	// 	setselected("Ameria");
-	// 	setShow(!show);
-	// };
-	// const handleClickAsia = () => {
-	// 	setselected("Asia");
-	// 	setShow(!show);
-	// };
-	// const handleClickEurope = () => {
-	// 	setselected("Europe");
-	// 	setShow(!show);
-	// };
-	// const handleClickOceania = () => {
-	// 	setselected("Oceania");
-	// 	setShow(!show);
-	// };
-
 	return (
 		<div className="search-wrapper">
 			<div className="filter-countries">
@@ -59,11 +32,6 @@ function Search({
 						{regions.map((region) => {
 							return <li onClick={handleChangeRegion}>{region}</li>;
 						})}
-
-						{/* <li onClick={handleClickAmerica}>America</li>
-						<li onClick={handleClickAsia}>Asia</li>
-						<li onClick={handleClickEurope}>Europe</li>
-						<li onClick={handleClickOceania}>Oceania</li> */}
 					</ul>
 				)}
 			</div>

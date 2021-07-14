@@ -36,6 +36,15 @@ function CountryDetails({ dark }) {
 					/>
 				</Link>
 			</div>
+			{isPending && (
+				<div className="loader">
+					<div class={`lds-facebook ${dark ? "loader-dark-mode" : ""}`}>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			)}
 			{!isPending && (
 				<SingleCountryInformation
 					country={singleCountryDetails}

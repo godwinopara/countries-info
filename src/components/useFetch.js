@@ -10,13 +10,15 @@ function useFetch(url) {
 		function countryDetails() {
 			return axios.get(url);
 		}
-		if (isPending) {
-			Promise.all([countriesData(), countryDetails()]).then((result) => {
-				setallCountriesData(result[0].data);
-				setSingleCountryDetails(result[1].data);
-				setisPending(false);
-			});
-		}
+		setTimeout(() => {
+			if (isPending) {
+				Promise.all([countriesData(), countryDetails()]).then((result) => {
+					setallCountriesData(result[0].data);
+					setSingleCountryDetails(result[1].data);
+					setisPending(false);
+				});
+			}
+		}, 1500);
 
 		return () => {
 			setisPending(false);
